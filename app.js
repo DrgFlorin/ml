@@ -5,13 +5,15 @@ const network = new brain.recurrent.LSTM();
 
 const trainingData = data.map(item => ({
     input: item.text,
-    output: item.category
+    output: item.sentiment
 }));
 
 network.train(trainingData, {
-    iterations: 2000
+    iterations: 20000,
+    logPeriod: 50,
+    log: true,
 });
 
-const output = network.run('I fixed the power supply');
+const output = network.run('he who lives in harmony with himself lives in harmony with the universe');
 
-console.log(`Category: ${output}`);
+console.log(`Sentiment: ${output}`);
