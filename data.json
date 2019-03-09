@@ -1,18 +1,30 @@
 [
     {
-        "text": "program",
-        "category": "software"
+        "text": "not happy",
+        "sentiment": "negative"
     },
     {
-        "text": "power supply",
-        "category": "hardware"
+        "text": "not sad",
+        "sentiment": "positive"
     },
     {
-        "text": "drive",
-        "category": "hardware"
+        "text": "happy",
+        "sentiment": "positive"
     },
     {
-        "text": "code",
-        "category": "software"
+        "text": "sad",
+        "sentiment": "negative"
+    },
+    {
+        "text": "wasnt sad until",
+        "sentiment": "negative"
+    },
+    {
+        "text": "wasnt happy until",
+        "sentiment": "positive"
+    },
+    {
+        "text": "love",
+        "sentiment": "positive"
     }
 ]

@@ -5,13 +5,31 @@ const network = new brain.recurrent.LSTM();
 
 const trainingData = data.map(item => ({
     input: item.text,
-    output: item.category
+    output: item.sentiment
 }));
 
 network.train(trainingData, {
-    iterations: 2000
+    iterations: 2000,
+    logPeriod: 50,
+    log: true,
 });
 
-const output = network.run('I fixed the power supply');
+const input = [
+    "i am not sad",
+    "i am not happy",
+    "i fucking love dogs"
+];
 
-console.log(`Category: ${output}`);
+const runned = new Array();
+
+// RUNNING THE SENTENCES THROUGH THE NETWORK
+
+for(var i = 0; i < input.length; i++) {
+    runned[i] = network.run(input[i]);
+}
+
+// OUTPUTING THE RESULTS
+
+for(var i = 0; i < runned.length; i++) {
+    console.log(input[i] + ' is ' + '--> ' + runned[i].toUpperCase());
+}
